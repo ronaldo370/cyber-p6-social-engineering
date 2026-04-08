@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Benefits Portal | SkillInfyTech</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        .logo { color: #2c3e50; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: #7f8c8d; }
+        input[type="text"], input[type="password"] { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        .btn { width: 100%; padding: 12px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        .btn:hover { background-color: #2980b9; }
+        .urgent { color: #e74c3c; font-size: 14px; text-align: center; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="logo">SkillInfyTech Portal</div>
+        <p style="text-align: center; color: #7f8c8d;">Please sign in to view your updated health benefit statement.</p>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="username">Corporate Email</label>
+                <input type="text" name="username" id="username" placeholder="name@skillinfytech.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <button type="submit" class="btn">Access Statements</button>
+        </form>
+        <div class="urgent">Deadline: EOD Friday</div>
+    </div>
+</body>
+</html>
