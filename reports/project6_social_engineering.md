@@ -25,14 +25,15 @@ Design and execute a Social Engineering Awareness Simulation to educate users ab
 
 ## ⚙️ Steps Executed
 
-### Step 1: Bait Creation
-A simulated phishing email was designed (`lab/phishing_email.html`) targeting employees with an urgent request to review their "2026 Health Benefit Statements". 
-- **The Hook**: A large red "View My 2026 Benefits" button pointing to the simulation server.
-- **Red Flags**: Sense of urgency ("EOD Friday"), generic greeting, and a non-corporate link (`127.0.0.1`).
+### Step 1: Bait Creation & UI Enhancement
+A highly convincing, premium phishing simulation was designed:
+- **UI/UX**: Integrated a professional, animated authentication dashboard with transition effects and modern "Poppins" typography.
+- **The Hook**: A simulated "SkillInfyTech Employee Portal" that mimics high-end corporate sign-in pages.
+- **Red Flags**: Maintained critical red flags (Local IP, non-HTTPS, urgency) to ensure the simulation remains an effective learning tool despite its professional appearance.
 
 ### Step 2: Simulated Portal Development
-A Flask application was built to host the phishing landing page.
-- **The Phish**: The landing page mimicked a corporate login portal, using familiar logos and branding to build trust.
+A Flask application was built to host the premium phishing landing page.
+- **The Phish**: The landing page uses advanced CSS transitions to toggle between "Login" and "Request Access" panels, increasing the perceived legitimacy of the portal.
 - **The Capture**: The backend logged the submission of user IDs (without storing passwords) to track simulation success rates.
 
 ### Step 3: Immediate Educational Feedback

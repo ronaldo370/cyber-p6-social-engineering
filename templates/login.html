@@ -3,35 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Benefits Portal | SkillInfyTech</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .login-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
-        .logo { color: #2c3e50; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; color: #7f8c8d; }
-        input[type="text"], input[type="password"] { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
-        .btn { width: 100%; padding: 12px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-top: 10px; }
-        .btn:hover { background-color: #2980b9; }
-        .urgent { color: #e74c3c; font-size: 14px; text-align: center; margin-top: 20px; font-weight: bold; }
-    </style>
+    <title>Login & Signup Form</title>
+    <!-- Restored exactly from source with Flask hooks -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <div class="login-card">
-        <div class="logo">SkillInfyTech Portal</div>
-        <p style="text-align: center; color: #7f8c8d;">Please sign in to view your updated health benefit statement.</p>
-        <form action="/login" method="POST">
-            <div class="form-group">
-                <label for="username">Corporate Email</label>
-                <input type="text" name="username" id="username" placeholder="name@skillinfytech.com" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            <button type="submit" class="btn">Access Statements</button>
-        </form>
-        <div class="urgent">Deadline: EOD Friday</div>
+    <div class="auth-wrapper">
+        <div class="background-shape"></div>
+        <div class="secondary-shape"></div>
+        <div class="credentials-panel signin">
+            <h2 class="slide-element">Login</h2>
+            <!-- Flask Integration: action="/login" method="POST" -->
+            <form action="/login" method="POST">
+                <div class="field-wrapper slide-element">
+                    <!-- Flask Integration: name="username" -->
+                    <input type="text" name="username" required>
+                    <label for="">Username</label>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="field-wrapper slide-element">
+                    <!-- Flask Integration: name="password" -->
+                    <input type="password" name="password" required>
+                    <label for="">Password</label>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div class="field-wrapper slide-element">
+                    <button class="submit-button" type="submit">Login</button>
+                </div>
+
+                <div class="switch-link slide-element">
+                    <p>Don't have an account? <br> <a href="#" class="register-trigger">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="welcome-section signin">
+            <h2 class="slide-element">WELCOME BACK!</h2>
+        </div>
+
+        <div class="credentials-panel signup">
+            <h2 class="slide-element">Register</h2>
+            <form action="#">
+                <div class="field-wrapper slide-element">
+                    <input type="text" required>
+                    <label for="">Username</label>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="field-wrapper slide-element">
+                    <input type="email" required>
+                    <label for="">Email</label>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div class="field-wrapper slide-element">
+                    <input type="password" required>
+                    <label for="">Password</label>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div class="field-wrapper slide-element">
+                    <button class="submit-button" type="submit">Register</button>
+                </div>
+
+                <div class="switch-link slide-element">
+                    <p>Already have an account? <br> <a href="#" class="login-trigger">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="welcome-section signup">
+            <h2 class="slide-element">WELCOME!</h2>
+        </div>
+
     </div>
+    <div class="footer">
+        <p>Made with ❤️ by <a href="#" target="_blank">CodeZenithAI</a></p>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='style.js') }}"></script>
 </body>
+
 </html>

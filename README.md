@@ -8,6 +8,16 @@ This project is the final submission for the cybersecurity internship. It addres
 
 The goal is to demonstrate how attackers create convincing fake login portals to steal credentials and then provide users with immediate, actionable education on how to identify these threats in the future.
 
+## 📸 Visual Demo
+
+### 1. Phishing Bait Landing Page
+This is the fake login portal designed to mimic a corporate environment with a professional look and feel.
+![Login Page](static/screenshots/login.png)
+
+### 2. Upgraded Security Awareness Page
+Once the user "submits" their credentials, they are immediately redirected to this educational dashboard.
+![Warning Page](static/screenshots/warning.png)
+
 ## 🛠️ Tools Used
 
 | Tool | Purpose |

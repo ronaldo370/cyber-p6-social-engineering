@@ -4,40 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Awareness Training | SkillInfyTech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ecf3f1; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
-        .warning-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 600px; border-top: 8px solid #e74c3c; }
-        h1 { color: #e74c3c; margin-top: 0; }
-        .red-flag { background: #fdf2f2; border-left: 4px solid #e74c3c; padding: 15px; margin-bottom: 20px; }
-        .red-flag h3 { margin-top: 0; color: #c0392b; }
-        .success-btn { background: #2ecc71; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; }
+        :root {
+            --primary: #00d4ff;
+            --danger: #ff4757;
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at top left, #1e293b, #0f172a);
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .warning-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 700px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .warning-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--danger), #ff6b81);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: var(--danger);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .red-flag {
+            background: rgba(255, 71, 87, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: 20px;
+            margin-bottom: 24px;
+            border-radius: 0 12px 12px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .red-flag:hover {
+            transform: translateX(8px);
+        }
+
+        .red-flag h3 {
+            margin-top: 0;
+            color: #ff6b81;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .red-flag p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .actions {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .success-btn {
+            background: linear-gradient(135deg, var(--primary), #00b8d4);
+            color: #0f172a;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 15px -3px rgba(0, 212, 255, 0.3);
+        }
+
+        .success-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 212, 255, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .success-btn:active {
+            transform: translateY(0);
+        }
+
+        .icon-warn {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="warning-card">
-        <h1>⚠️ THIS WAS A SIMULATION</h1>
-        <p>Your interaction was part of the **SkillInfyTech Phishing Awareness Campaign**. No sensitive data was actually stolen, but in a real attack, your credentials could have been compromised.</p>
+        <span class="icon-warn">🛡️</span>
+        <h1>THIS WAS A SIMULATION</h1>
+        <p>Your interaction was part of the <strong>SkillInfyTech Phishing Awareness Campaign</strong>. While no sensitive data was stolen, in a real attack, your credentials could have been compromised instantly.</p>
         
         <h2>How to spot this phishing attempt:</h2>
         
         <div class="red-flag">
-            <h3>🚩 Red Flag 1: Sense of Urgency</h3>
-            <p>The page mentioned a strict "Deadline: EOD Friday". Attackers use urgency to make you act quickly without thinking or verifying the source.</p>
+            <h3>🚩 Sense of Urgency</h3>
+            <p>Attackers use deadlines like "Friday EOD" to rush you into making mistakes without verifying the source.</p>
         </div>
 
         <div class="red-flag">
-            <h3>🚩 Red Flag 2: Suspicious URL</h3>
-            <p>Always check the address bar. Real portals will use verified domains (e.g., `https://portal.skillinfytech.com`) rather than local or misspelled IP addresses.</p>
+            <h3>🚩 Suspicious URL</h3>
+            <p>Always verify the address bar. Real portals use certified domains. Locally hosted or misspelled IPs are major red flags.</p>
         </div>
 
         <div class="red-flag">
-            <h3>🚩 Red Flag 3: Unsecured Site</h3>
-            <p>The site lacked a green padlock or "HTTPS" prefix. Never enter corporate credentials on a site that does not have end-to-end encryption.</p>
+            <h3>🚩 Unsecured Connection</h3>
+            <p>Always look for the padlock icon. Never enter credentials on a site that lacks HTTPS encryption.</p>
         </div>
 
-        <p>Thank you for participating! Always remember: **Think Before You Click.**</p>
+        <p style="text-align: center; margin-top: 30px; font-style: italic;">Stay vigilant. Think before you click.</p>
         
-        <a href="/" class="success-btn">Return to Safety</a>
+        <div class="actions">
+            <a href="/" class="success-btn">Return to Safety</a>
+        </div>
     </div>
 </body>
 </html>

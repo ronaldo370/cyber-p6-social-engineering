@@ -34,6 +34,10 @@ def warning():
     # Serve the educational "Gotcha" page
     return render_template('warning.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
+
 if __name__ == '__main__':
     # Crucial: Ensure the templates are found correctly
     print("[*] Starting Phishing Awareness Simulation at http://127.0.0.1:5000")
